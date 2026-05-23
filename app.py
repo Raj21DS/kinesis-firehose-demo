@@ -52,7 +52,7 @@ for i in range(30):
 
         "humidity": random.randint(40, 90),
 
-        "time": datetime.now().strftime("%H:%M:%S),
+        "time": datetime.now().strftime("%H:%M:%S"),
         "location": random.choice(["Room1", "Room2", "Outdoor"]),
         "device_status": random.choice(["active", "inactive", "maintenance"])
                                         
