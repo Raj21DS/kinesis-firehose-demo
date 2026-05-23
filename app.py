@@ -10,7 +10,21 @@ from datetime import datetime
 
  
 
-st.title("Kinesis Firehose Streaming Demo")
+st.title("Kinesis Firehose Analytics Dashboard")
+
+ 
+
+ 
+
+df = pd.DataFrame(columns=["temperature", "humidity"])
+
+ 
+
+ 
+
+chart = st.line_chart(df)
+
+ 
 
  
 
@@ -18,11 +32,15 @@ data = []
 
  
 
-placeholder = st.empty()
+ 
+
+table_placeholder = st.empty()
 
  
 
-for i in range(20):
+ 
+
+for i in range(30):
 
  
 
@@ -34,29 +52,33 @@ for i in range(20):
 
         "humidity": random.randint(40, 90),
 
-        "time": datetime.now().strftime("%H:%M:%S"),
-     
-         "day_of_week": datetime.now().strftime("%A")
+        "time": datetime.now().strftime("%H:%M:%S")
 
     }
 
  
 
+    # Append data
+
     data.append(new_data)
 
  
 
-    df = pd.DataFrame(data)
+    # Create dataframe
+
+    full_df = pd.DataFrame(data)
 
  
 
-    placeholder.dataframe(df)
+    
+
+    table_placeholder.dataframe(full_df)
 
  
 
-    time.sleep(1)
     chart.add_rows(
-     pd.DataFrame(
+
+        pd.DataFrame(
 
             {
 
@@ -72,7 +94,7 @@ for i in range(20):
 
  
 
-    # Alerts
+ 
 
     if new_data["temperature"] > 35:
 
@@ -84,7 +106,7 @@ for i in range(20):
 
  
 
-# Download CSV Report
+ 
 
 csv = full_df.to_csv(index=False)
 
