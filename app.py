@@ -35,6 +35,8 @@ for i in range(20):
         "humidity": random.randint(40, 90),
 
         "time": datetime.now().strftime("%H:%M:%S")
+     
+         "day_of_week": datetime.now().strftime("%A")
 
     }
 
