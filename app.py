@@ -59,7 +59,7 @@ for i in range(20):
      pd.DataFrame(
       {
         "temperature": [new_data["temperature"]],
-       "humidity": [new_data["humidity"]],
+       "humidity": [new_data["humidity"]]
       }
     )
      time.sleep(1)
