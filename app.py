@@ -87,7 +87,8 @@ for i in range(30):
 
                 "temperature": [new_data["temperature"]],
 
-                "humidity": [new_data["humidity"]]
+                "humidity": [new_data["humidity"]],
+             "device_status": [new_data["device_status"]]
 
             }
 
