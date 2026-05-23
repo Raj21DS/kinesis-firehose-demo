@@ -55,9 +55,8 @@ for i in range(20):
  
 
     time.sleep(1)
-   chart.add_rows(
-
-        pd.DataFrame(
+    chart.add_rows(
+     pd.DataFrame(
 
             {
 
