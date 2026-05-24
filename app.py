@@ -104,10 +104,9 @@ with col3:
  
 
     if stream_url:
-
-        st.video(stream_url)def get_stream_url(youtube_url):
-
-    try:
+     st.video(stream_url)
+     def get_stream_url(youtube_url):
+      try:
 
         streams = streamlink.streams(youtube_url)
 
