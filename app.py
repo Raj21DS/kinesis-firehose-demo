@@ -22,7 +22,7 @@ youtube_urls = [
 
     "https://www.twitch.tv/valorant_pacific",
 
-    "https://www.instagram.com/p/DTshte0CK2z/",
+    "https://www.youtube.com/watch?v=CT_WEGUKejQ",
 
     "https://www.youtube.com/watch?v=X8F9JfCUWrs",
 
