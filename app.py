@@ -121,8 +121,7 @@ with col3:
         return None
       except Exception as e:
        st.error(f"Error loading stream: {e}")
-
-        return None
+       return None
 
  
 
