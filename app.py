@@ -45,53 +45,7 @@ col1, col2 = st.columns(2)
 
  
 
-# Stream 1
 
-with col1:
-
-    st.subheader("Live Stream 1")
-
-    stream_url = get_stream_url(youtube_urls[0])
-
- 
-
-    if stream_url:
-
-        st.video(stream_url)
-
- 
-
-# Stream 2
-
-with col2:
-
-    st.subheader("Live Stream 2")
-
-    stream_url = get_stream_url(youtube_urls[1])
-
- 
-
-    if stream_url:
-
-        st.video(stream_url)
-
- 
-
-# Second row
-
-col3, col4 = st.columns(2)
-
- 
-
-# Stream 3
-
-with col3:
-
-    st.subheader("Live Stream 3")
-
-    stream_url = get_stream_url(youtube_urls[2])
-
- 
 
     if stream_url:
         st.video(stream_url)
