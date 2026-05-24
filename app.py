@@ -20,7 +20,7 @@ st.title("Live YouTube Multi Stream Dashboard")
 
 youtube_urls = [
 
-    "https://www.youtube.com/watch?v=j2knrqAzYVY",
+    "https://www.primevideo.com/region/eu/detail/0LHYZ07Y0G3R8XR5WQ96RAQJ7B/ref=atv_hm_hom_c_DGa863bd_2_2",
 
     "https://www.youtube.com/watch?v=LPZh9BOjkQs",
 
