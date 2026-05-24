@@ -20,13 +20,13 @@ st.title("Live YouTube Multi Stream Dashboard")
 
 youtube_urls = [
 
-    "https://www.youtube.com/watch?v=NphMcnU8ymU",
+    "https://www.youtube.com/watch?v=j2knrqAzYVY",
 
-    "https://www.youtube.com/watch?v=s0LLVQeMmtU",
+    "https://www.youtube.com/watch?v=LPZh9BOjkQs",
 
-    "https://www.youtube.com/watch?v=J326LIUrZM8",
+    "https://www.youtube.com/watch?v=X8F9JfCUWrs",
 
-    "https://www.youtube.com/watch?v=UiTvqSd52ak",
+    "https://www.youtube.com/watch?v=D1eL1EnxXXQ",
 
     "https://www.youtube.com/watch?v=wEXiONQFddg"
 
