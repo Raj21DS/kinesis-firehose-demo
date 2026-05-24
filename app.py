@@ -20,7 +20,7 @@ st.title("Live YouTube Multi Stream Dashboard")
 
 youtube_urls = [
 
-    "https://www.youtube.com/watch?v=J9NgatyfFXA",
+    "https://www.twitch.tv/valorant_pacific",
 
     "https://www.youtube.com/watch?v=LPZh9BOjkQs",
 
