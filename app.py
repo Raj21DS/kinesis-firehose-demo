@@ -1,130 +1,196 @@
 import streamlit as st
 
-import pandas as pd
+import streamlink
 
-import random
+st.set_page_config(layout="wide")
+st.title("Live Youtube Streaming")
 
-import time
+youtube_urls = [
+    "https://www.youtube.com/watch?v=j2knrqAzYVY",
+    "https://www.youtube.com/watch?v=LPZh9BOjkQs",
+ "https://www.youtube.com/watch?v=CT_WEGUKejQ",
+ "https://www.youtube.com/watch?v=wEXiONQFddg"
+]
 
-from datetime import datetime
+def get_stream_url(youtube_url):
 
- 
-
-st.title("Kinesis Firehose Analytics Dashboard")
-
- 
-
- 
-
-df = pd.DataFrame(columns=["temperature", "humidity"])
-
- 
-
- 
-
-chart = st.line_chart(df)
+    try:
+# Streamlink means URL, for example, YouTube URL, Netflix URL, etc.
+     # Stream is working dictionary
+        streams = streamlink.streams(youtube_url)
 
  
 
- 
+        if "best" in streams:
 
-data = []
-
- 
+            return streams["best"].url
 
  
 
-table_placeholder = st.empty()
+        return None
 
  
 
- 
+    except Exception as e:
 
-for i in range(30):
+        st.error(f"Error loading stream: {e}")
 
- 
-
-    new_data = {
-
-        "device_id": random.randint(1000, 9999),
-
-        "temperature": random.randint(20, 40),
-
-        "humidity": random.randint(40, 90),
-
-        "time": datetime.now().strftime("%H:%M:%S"),
-        "location": random.choice(["Room1", "Room2", "Outdoor"]),
-        "device_status": random.choice(["active", "inactive", "maintenance"])
-                                        
-
-    }
+        return None
 
  
 
-    # Append data
+# Create 2 columns
 
-    data.append(new_data)
-
- 
-
-    # Create dataframe
-
-    full_df = pd.DataFrame(data)
+col1, col2 = st.columns(2)
 
  
 
-    
+# Stream 1
 
-    table_placeholder.dataframe(full_df)
+with col1:
 
- 
+    st.subheader("Live Stream 1")
 
-    chart.add_rows(
-
-        pd.DataFrame(
-
-            {
-
-                "temperature": [new_data["temperature"]],
-
-                "humidity": [new_data["humidity"]],
-             "device_status": [new_data["device_status"]],
-             "location": [new_data["location"]]
-
-            }
-
-        )
-
-    )
+    stream_url = get_stream_url(youtube_urls[0])
 
  
 
- 
+    if stream_url:
 
-    if new_data["temperature"] > 35:
-
-        st.warning("High Temperature Alert!")
+        st.video(stream_url)
 
  
 
-    time.sleep(1)
+# Stream 2
+
+with col2:
+
+    st.subheader("Live Stream 2")
+
+    stream_url = get_stream_url(youtube_urls[1])
 
  
 
+    if stream_url:
+
+        st.video(stream_url)
+
  
 
-csv = full_df.to_csv(index=False)
+# Second row
+
+col3, col4 = st.columns(2)
 
  
 
-st.download_button(
+# Stream 3
 
-    label="Download Report",
+with col3:
 
-    data=csv,
+    st.subheader("Live Stream 3")
 
-    file_name="streaming_report.csv",
+    stream_url = get_stream_url(youtube_urls[2])
 
-    mime="text/csv"
+ 
 
-)
+    if stream_url:
+
+        st.video(stream_url)def get_stream_url(youtube_url):
+
+    try:
+
+        streams = streamlink.streams(youtube_url)
+
+ 
+
+        if "best" in streams:
+
+            return streams["best"].url
+
+ 
+
+        return None
+
+ 
+
+    except Exception as e:
+
+        st.error(f"Error loading stream: {e}")
+
+        return None
+
+ 
+
+# Create 2 columns
+
+col1, col2 = st.columns(2)
+
+ 
+
+# Stream 1
+
+with col1:
+
+    st.subheader("Live Stream 1")
+
+    stream_url = get_stream_url(youtube_urls[0])
+
+ 
+
+    if stream_url:
+
+        st.video(stream_url)
+
+ 
+
+# Stream 2
+
+with col2:
+
+    st.subheader("Live Stream 2")
+
+    stream_url = get_stream_url(youtube_urls[1])
+
+ 
+
+    if stream_url:
+
+        st.video(stream_url)
+
+ 
+
+# Second row
+
+col3, col4 = st.columns(2)
+
+ 
+
+# Stream 3
+
+with col3:
+
+    st.subheader("Live Stream 3")
+
+    stream_url = get_stream_url(youtube_urls[2])
+
+ 
+
+    if stream_url:
+
+        st.video(stream_url)
+
+ 
+
+# Stream 4
+
+with col4:
+
+    st.subheader("Live Stream 4")
+
+    stream_url = get_stream_url(youtube_urls[3])
+
+ 
+
+    if stream_url:
+
+        st.video(stream_url)
