@@ -1,6 +1,9 @@
+
 import streamlit as st
 
 import streamlink
+
+ 
 
  
 
@@ -8,23 +11,35 @@ st.set_page_config(layout="wide")
 
  
 
-st.title("Live Youtube Streaming")
+ 
+
+st.title("Live YouTube Multi Stream Dashboard")
+
+ 
 
  
 
 youtube_urls = [
 
-    "https://www.youtube.com/watch?v=j2knrqAzYVY",
+    "https://www.youtube.com/watch?v=NphMcnU8ymU",
 
-    "https://www.youtube.com/watch?v=D1eL1EnxXXQ",
+    "https://www.youtube.com/watch?v=s0LLVQeMmtU",
 
-    "https://www.youtube.com/watch?v=CT_WEGUKejQ",
+    "https://www.youtube.com/watch?v=J326LIUrZM8",
 
-    "https://www.youtube.com/watch?v=wEXiONQFddg"
+    "https://www.youtube.com/watch?v=UiTvqSd52ak",
+
+    "https://www.youtube.com/watch?v=jfKfPfyJRdk"
 
 ]
 
+ 
+
+ 
+
 def get_stream_url(youtube_url):
+
+ 
 
     try:
 
@@ -41,6 +56,7 @@ def get_stream_url(youtube_url):
         return None
 
  
+
     except Exception as e:
 
         st.error(f"Error loading stream: {e}")
@@ -49,7 +65,7 @@ def get_stream_url(youtube_url):
 
  
 
-# Create 2 columns
+ 
 
 col1, col2 = st.columns(2)
 
@@ -59,7 +75,11 @@ col1, col2 = st.columns(2)
 
 with col1:
 
+ 
+
     st.subheader("Live Stream 1")
+
+ 
 
     stream_url = get_stream_url(youtube_urls[0])
 
@@ -71,11 +91,23 @@ with col1:
 
  
 
+    else:
+
+        st.warning("Unable to load stream")
+
+ 
+
+ 
+
 # Stream 2
 
 with col2:
 
+ 
+
     st.subheader("Live Stream 2")
+
+ 
 
     stream_url = get_stream_url(youtube_urls[1])
 
@@ -87,7 +119,15 @@ with col2:
 
  
 
-# Second row
+    else:
+
+        st.warning("Unable to load stream")
+
+ 
+
+ 
+
+ 
 
 col3, col4 = st.columns(2)
 
@@ -97,59 +137,82 @@ col3, col4 = st.columns(2)
 
 with col3:
 
+ 
+
     st.subheader("Live Stream 3")
+
+ 
 
     stream_url = get_stream_url(youtube_urls[2])
 
  
 
     if stream_url:
-     st.video(stream_url)
-     def get_stream_url(youtube_url):
-      try:
 
-        streams = streamlink.streams(youtube_url)
+        st.video(stream_url)
 
  
 
-        if "best" in streams:
+    else:
 
-            return streams["best"].url
+        st.warning("Unable to load stream")
 
  
 
-        return None
-      except Exception as e:
-       st.error(f"Error loading stream: {e}")
-       return None
-# Stream 3
+ 
 
-with col3:
+# Stream 4
 
-    st.subheader("Live Stream 3")
+with col4:
 
-    stream_url = get_stream_url(youtube_urls[2])
+ 
+
+    st.subheader("Live Stream 4")
+
+ 
+
+    stream_url = get_stream_url(youtube_urls[3])
 
  
 
     if stream_url:
-     st.video(stream_url)
-     def get_stream_url(youtube_url):
-      try:
 
-        streams = streamlink.streams(youtube_url)
+        st.video(stream_url)
 
  
 
-        if "best" in streams:
+    else:
 
-            return streams["best"].url
+        st.warning("Unable to load stream")
 
  
 
-        return None
-      except Exception as e:
-       st.error(f"Error loading stream: {e}")
-       return None
  
 
+ 
+
+ 
+
+# Stream 5
+
+with col5:
+
+ 
+
+    st.subheader("Live Stream 5")
+
+ 
+
+    stream_url = get_stream_url(youtube_urls[4])
+
+ 
+
+    if stream_url:
+
+        st.video(stream_url)
+
+ 
+
+    else:
+
+        st.warning("Unable to load stream")
