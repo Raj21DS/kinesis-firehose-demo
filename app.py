@@ -180,8 +180,24 @@ with col3:
  
 
     if stream_url:
+     st.video(stream_url)
+     def get_stream_url(youtube_url):
+      try:
 
-        st.video(stream_url)
+        streams = streamlink.streams(youtube_url)
+
+ 
+
+        if "best" in streams:
+
+            return streams["best"].url
+
+ 
+
+        return None
+      except Exception as e:
+       st.error(f"Error loading stream: {e}")
+       return None
 
  
 
