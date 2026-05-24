@@ -44,7 +44,7 @@ def get_stream_url(youtube_url):
 col1, col2 = st.columns(2)
 if stream_url:
     st.video(stream_url)
-        def get_stream_url(youtube_url):
+    def get_stream_url(youtube_url):
             try:
                 streams = streamlink.streams(youtube_url)
                 if "best" in streams:
