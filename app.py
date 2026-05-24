@@ -1,21 +1,33 @@
 import streamlit as st
+
 import streamlink
 
+ 
+
 st.set_page_config(layout="wide")
+
+ 
+
 st.title("Live Youtube Streaming")
 
+ 
+
 youtube_urls = [
+
     "https://www.youtube.com/watch?v=j2knrqAzYVY",
-    "https://www.youtube.com/watch?v=LPZh9BOjkQs",
- "https://www.youtube.com/watch?v=CT_WEGUKejQ",
- "https://www.youtube.com/watch?v=wEXiONQFddg"
+
+    "https://www.youtube.com/watch?v=D1eL1EnxXXQ",
+
+    "https://www.youtube.com/watch?v=CT_WEGUKejQ",
+
+    "https://www.youtube.com/watch?v=wEXiONQFddg"
+
 ]
 
 def get_stream_url(youtube_url):
 
     try:
-# Streamlink means URL, for example, YouTube URL, Netflix URL, etc.
-     # Stream is working dictionary
+
         streams = streamlink.streams(youtube_url)
 
  
@@ -41,17 +53,82 @@ def get_stream_url(youtube_url):
 # Create 2 columns
 
 col1, col2 = st.columns(2)
-if stream_url:
-    st.video(stream_url)
-    def get_stream_url(youtube_url):
-            try:
-                streams = streamlink.streams(youtube_url)
-                if "best" in streams:
-                    return streams["best"].url
-                    return None
-            except Exception as e:
-                st.error(f"Error loading stream: {e}")
-                return None
+
+ 
+
+# Stream 1
+
+with col1:
+
+    st.subheader("Live Stream 1")
+
+    stream_url = get_stream_url(youtube_urls[0])
+
+ 
+
+    if stream_url:
+
+        st.video(stream_url)
+
+ 
+
+# Stream 2
+
+with col2:
+
+    st.subheader("Live Stream 2")
+
+    stream_url = get_stream_url(youtube_urls[1])
+
+ 
+
+    if stream_url:
+
+        st.video(stream_url)
+
+ 
+
+# Second row
+
+col3, col4 = st.columns(2)
+
+ 
+
+# Stream 3
+
+with col3:
+
+    st.subheader("Live Stream 3")
+
+    stream_url = get_stream_url(youtube_urls[2])
+
+ 
+
+    if stream_url:
+
+        st.video(stream_url)def get_stream_url(youtube_url):
+
+    try:
+
+        streams = streamlink.streams(youtube_url)
+
+ 
+
+        if "best" in streams:
+
+            return streams["best"].url
+
+ 
+
+        return None
+
+ 
+
+    except Exception as e:
+
+        st.error(f"Error loading stream: {e}")
+
+        return None
 
  
 
