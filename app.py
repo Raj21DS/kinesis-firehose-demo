@@ -195,24 +195,30 @@ with col4:
 
 # Stream 5
 
-with col5:
+col5_container = st.container()
 
  
 
-    st.subheader("Live Stream 5")
+# Stream 5
+
+with col5_container:
 
  
 
-    stream_url = get_stream_url(youtube_urls[4])
+st.subheader("Live Stream 5")
 
  
 
-    if stream_url:
-
-        st.video(stream_url)
+stream_url = get_stream_url(youtube_urls[4])
 
  
 
-    else:
+if stream_url:
 
-        st.warning("Unable to load stream")
+st.video(stream_url)
+
+ 
+
+else:
+
+st.warning("Unable to load stream")
